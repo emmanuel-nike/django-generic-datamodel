@@ -27,15 +27,23 @@
               size="sm"
               type="primary"
               iconOnly
-              icon="ni ni-ruler-pencil"
-              @click="editTable(row.id)"
+              icon="fa fa-eye"
+              @click="viewTable(row)"
+              title="View"
+            ></base-button>
+            <base-button
+              size="sm"
+              type="primary"
+              iconOnly
+              icon="fas fa-pencil-alt"
+              @click="editTable(row)"
               title="Edit"
             ></base-button>
             <base-button
               size="sm"
               type="danger"
               iconOnly
-              icon="ni ni-fat-delete"
+              icon="fa fa-trash"
               @click="deleteTable(row.id)"
               title="Delete"
             ></base-button>
@@ -56,7 +64,7 @@
     </modal>
 
     <modal :show="showModal" @close="toggleTableModal" type="large">
-      <div slot="header">Add Table</div>
+      <div slot="header">Add/Edit Table</div>
       <div>
         <base-alert v-if="errors.message" type="danger">{{ errors.message }}</base-alert>
         <form role="form">
@@ -185,7 +193,6 @@ export default {
       ],
       showModal: false,
       showDialogModal: false,
-      dialogCommand: {},
       dialogMessage: null
     };
   },
@@ -193,6 +200,9 @@ export default {
     this.loadTables();
   },
   methods: {
+    viewTable: function(selectedTable) {
+      this.$emit("selectedTable", selectedTable);
+    },
     loadTables: function() {
       var dt = this;
       this.$http.get("/api/data-tables").then(response => {
@@ -275,13 +285,8 @@ export default {
         dt.active_table.fields.splice(pos, 1);
       }
     },
-    editTable: function(id) {
-      for (let i = 0; i < this.tableData.length; i++) {
-        if (this.tableData[i].id == id) {
-          this.active_table = this.tableData[i];
-          break;
-        }
-      }
+    editTable: function(selectedTable) {
+      this.active_table = selectedTable;
       this.toggleTableModal();
     },
     deleteTable: function(id) {
@@ -346,6 +351,10 @@ export default {
                   });
               }
             }
+            this.$notify({
+              type: "success",
+              title: "Table and fields saved successfully"
+            });
             dt.resetActiveTableAndCloseModal();
           });
       } else {

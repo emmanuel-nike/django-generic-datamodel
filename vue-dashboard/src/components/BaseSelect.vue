@@ -32,7 +32,7 @@
         :class="[{'is-valid': valid === true}, {'is-invalid': valid === false}, inputClasses]"
         aria-describedby="addon-right addon-left"
       >
-        <option value disabled>--Select One--</option>
+        <option disabled value>--Select One--</option>
         <option
           v-for="option in options"
           :key="option.value"
@@ -107,8 +107,7 @@ export default {
     },
     options: {
       type: Array,
-      default: [],
-      description: "Select Icons"
+      description: "Select Options"
     }
   },
   data() {

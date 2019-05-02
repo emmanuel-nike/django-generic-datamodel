@@ -53,7 +53,7 @@ class DataContent(models.Model):
     table_id = models.ForeignKey(
         DataTable, related_name='data_contents', on_delete=models.CASCADE)
     row_id = models.ForeignKey(
-        DataTable, related_name='row_contents', on_delete=models.CASCADE)
+        DataRow, related_name='row_contents', on_delete=models.CASCADE)
     field_id = models.ForeignKey(
         DataField, related_name='field_contents', on_delete=models.CASCADE)
     content = models.TextField()

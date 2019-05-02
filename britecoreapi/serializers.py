@@ -17,7 +17,7 @@ class DataRowSerializer(serializers.ModelSerializer):
 
 
 class DataFieldSerializer(serializers.ModelSerializer):
-    field_contents = DataContentSerializer(many=True, read_only=True)
+    #field_contents = DataContentSerializer(many=True, read_only=True)
 
     class Meta:
         model = DataField

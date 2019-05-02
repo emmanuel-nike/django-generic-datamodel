@@ -8,7 +8,7 @@
             title="Total tables"
             type="gradient-red"
             :sub-title="tableCount"
-            icon="ni ni-active-40"
+            icon="ni ni-calendar-grid-58"
             class="mb-4 mb-xl-0"
           ></stats-card>
         </div>
@@ -45,7 +45,11 @@
           ></data-tables-table>
         </div>
         <div class="col-xl-8 mb-5 mb-xl-0">
-          <table-data-table :tableName="tableData.name" :tableDatas="tableData.data"></table-data-table>
+          <table-data-table
+            :tableName="tableData.name"
+            :tableColumns="tableData.columns"
+            :tableId="tableData.id"
+          ></table-data-table>
         </div>
       </div>
       <!--End tables-->
@@ -69,7 +73,7 @@ export default {
       tableData: {
         id: 0,
         name: null,
-        data: []
+        columns: []
       }
     };
   },
@@ -80,7 +84,11 @@ export default {
     setFieldCount: function(value) {
       this.fieldCount = value;
     },
-    setSelectedTable: function(value) {}
+    setSelectedTable: function(value) {
+      this.tableData.columns = value.fields;
+      this.tableData.name = value.name;
+      this.tableData.id = value.id;
+    }
   },
   mounted() {}
 };

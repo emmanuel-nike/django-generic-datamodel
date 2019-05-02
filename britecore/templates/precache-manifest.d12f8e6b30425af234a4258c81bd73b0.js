@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "db90308b1c8563a8bc19",
+    "revision": "f23d6386b00eab049670",
     "url": "/static/../../static/css/app.bc9d42d5.css"
   },
   {
-    "revision": "db90308b1c8563a8bc19",
-    "url": "/static/../../static/js/app.21eef7c7.js"
+    "revision": "f23d6386b00eab049670",
+    "url": "/static/../../static/js/app.ee298a2c.js"
   },
   {
-    "revision": "986f82e4c28e39409d2f",
-    "url": "/static/../../static/js/chunk-vendors.993ad927.js"
+    "revision": "97f89083f83b1047c0eb",
+    "url": "/static/../../static/js/chunk-vendors.fbd77d0c.js"
   },
   {
     "revision": "426439788ec5ba772cdf94057f6f4659",
@@ -32,7 +32,7 @@ self.__precacheManifest = [
     "url": "/static/../../static/img/nucleo-icons.0b8a30b1.svg"
   },
   {
-    "revision": "fa601634ab441abf946fca0b3b7a0255",
+    "revision": "61df5ddb94e008c70177754c8be1cdcd",
     "url": "/static/index.html"
   },
   {
@@ -44,12 +44,12 @@ self.__precacheManifest = [
     "url": "/static/img/brand/favicon.png"
   },
   {
-    "revision": "d136a071cf09ba5ab8dc2ada1ab04015",
-    "url": "/static/img/theme/bootstrap.jpg"
-  },
-  {
     "revision": "1f533d2fdc40493ee834dd8e4288220c",
     "url": "/static/img/theme/angular.jpg"
+  },
+  {
+    "revision": "d136a071cf09ba5ab8dc2ada1ab04015",
+    "url": "/static/img/theme/bootstrap.jpg"
   },
   {
     "revision": "50dd5fdc839dfc16739b15370650485c",

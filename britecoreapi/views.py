@@ -8,12 +8,14 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from .serializers import DataTableSerializer, DataFieldSerializer, DataContentSerializer, DataRowSerializer
 from .models import DataTable, DataField, DataContent, DataRow
-
+import time
 
 #########
 # POST
 # Custom Authentication Token to return user as well as token key
 #########
+
+
 class CustomAuthToken(ObtainAuthToken):
 
     def post(self, request, *args, **kwargs):
@@ -73,14 +75,15 @@ class DataRowView(APIView):
         if serializer.is_valid():
             serializer.save()
             for d in data:
-                d['table_id'] = tpk,
+                d['table_id'] = int(serializer.data['table_id'])
                 d['user_id'] = request.user.id
-                d['row_id'] = serializer.data['id']
+                d['row_id'] = int(serializer.data['id'])
 
             data_serializer = DataContentSerializer(data=data, many=True)
             if data_serializer.is_valid():
                 data_serializer.save()
-                return Response(serializer.data, status=status.HTTP_201_CREATED)
+                return Response(data_serializer.data, status=status.HTTP_201_CREATED)
+            return Response(data_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
