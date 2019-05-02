@@ -38,11 +38,22 @@ class DataField(models.Model):
         unique_together = ('table_id', 'name')
 
 
+# Table containing the data rows to keep track of which rows data eneterd is for
+class DataRow(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    table_id = models.ForeignKey(
+        DataTable, related_name='data_rows', on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+
 # Table containing the data content in text field
 class DataContent(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    table_id = models.ForeignKey(DataTable, on_delete=models.CASCADE)
-    field_id = models.ForeignKey(DataField, on_delete=models.CASCADE)
+    table_id = models.ForeignKey(
+        DataTable, related_name='data_contents', on_delete=models.CASCADE)
+    row_id = models.ForeignKey(
+        DataTable, related_name='row_contents', on_delete=models.CASCADE)
+    field_id = models.ForeignKey(
+        DataField, related_name='field_contents', on_delete=models.CASCADE)
     content = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)

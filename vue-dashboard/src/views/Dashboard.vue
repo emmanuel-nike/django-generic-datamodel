@@ -38,7 +38,11 @@
       <!--Tables-->
       <div class="row mt-5">
         <div class="col-xl-4">
-          <data-tables-table @tableCount="setTableCount" @fieldCount="setFieldCount"></data-tables-table>
+          <data-tables-table
+            @tableCount="setTableCount"
+            @fieldCount="setFieldCount"
+            @selectedTable="setSelectedTable"
+          ></data-tables-table>
         </div>
         <div class="col-xl-8 mb-5 mb-xl-0">
           <table-data-table :tableName="tableData.name" :tableDatas="tableData.data"></table-data-table>
@@ -75,7 +79,8 @@ export default {
     },
     setFieldCount: function(value) {
       this.fieldCount = value;
-    }
+    },
+    setSelectedTable: function(value) {}
   },
   mounted() {}
 };
