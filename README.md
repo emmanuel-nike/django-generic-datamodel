@@ -30,7 +30,7 @@ and visit your http://localhost:8000 to view project. You will be taken to a log
 this is configured to send the index.html to the template directory in britecore/template and also send javascript, css and image files to static directory
 
 ## Credits
-[Creative Tim Argon Dashboard](https://www.creative-tim.com/product/argon-dashboard)
+* Creative Tim [Argon Dashboard](https://www.creative-tim.com/product/argon-dashboard)
 
 ## License
 
