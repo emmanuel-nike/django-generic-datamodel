@@ -1,6 +1,9 @@
 # Generic Data Model
 This is a project that makes it possible for clients to create their own tables and fields and also store data in these tables. It is a generic data model developed in using Django framework 
 
+## Aim
+The aim of this project is to create a platform where users can create their own tables or risk types (for insurers) and attach as many fields as they like with different field types such as text, numbers, dates or even options. Then they can populate it with as much data as they can gather. These tables will be implemented in a generic manner and will not have to be manually inputed and migrated into the database.
+
 ## Approach
 One model called **DataTable** holds all created tables, another model called **DataField** holds all fields and has a many-to-one relationship with the DataTable so a table can have multiple fields. Field types are either numbers, dates, text or enum (which is an option) and then the Field Options are comma separated options 
 
@@ -17,6 +20,15 @@ The ERD diagram of the models is shown below
 **Frontend**
 * VueJs v2 
 User Authentication was done using JWT Token Authentication
+
+## Features
+* Login and Authentication (Registration not implemented)
+* Create tables
+* Add as many fields to any created table
+* Edit tables to add more fields or change fields information
+* Select a table and add data to the table. A modal with a form pops up that shows input types depending on the field types of the table
+* Delete a table entry
+* Delete a table
 
 ## Deployment
 This application is deployed on heroku for demo purposes. Note that you will be taken to a login screen and the test username/password is **bctest**/**bctest123**.
