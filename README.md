@@ -6,7 +6,7 @@ One model called **DataTable** holds all created tables, another model called **
 
 > Example if the field name is *sex* options would be *Male, Female*. 
 
-**DataContent** model holds all the data as text in the content column and has a many-to-one relationship with the DataTable and DataField. In order to keep track of inserted rows so that created content can have a link and can be treated as one group of information I made the DataRow model that has a one-to-many relationship with the DataContent. 
+**DataContent** model holds all the data as text in the content column and has a many-to-one relationship with the DataTable and DataField. In order to keep track of inserted rows so that created content can have a link and can be treated as one group of information I made the **DataRow** model that has a one-to-many relationship with the DataContent. 
 The ERD diagram of the models is shown below
 <img src="https://github.com/emmanuel-nike/django-generic-datamodel/blob/master/ERD.png" />
 
