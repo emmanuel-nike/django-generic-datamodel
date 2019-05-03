@@ -19,12 +19,12 @@ The ERD diagram of the models is shown below
 User Authentication was done using JWT Token Authentication
 
 ## How to Use?
-The project uses an sqlite database and the compiled version of the VueJS application is included in this repository. Make sure you have the requirements for Django v2.2 and have django rest framework installed. Just run
+The project uses an sqlite database and the compiled version of the VueJS application is included in this repository. To run this localy, make sure you have the requirements for Django v2.2 and have django rest framework installed. Just run the command below on your local machine
 
 > python manage.py runserver
 
-and visit your localhost to view project. You will be taken to a login screen the test username/password is **bctest**/**bctest123**. To recompile the vuejs app, navigate to the vue-dashboard directory and run
+and visit your http://localhost:8000 to view project. You will be taken to a login screen the test username/password is **bctest**/**bctest123**. The compiled VueJs app is already included but if you feel the need to recompile the VueJs app, navigate to the vue-dashboard directory and run
 
 > npm run build
 
-this is setup to send the index.html to the template directory in britecore/template and also send javascript and css files to static directory
+this is configured to send the index.html to the template directory in britecore/template and also send javascript, css and image files to static directory
