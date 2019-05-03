@@ -13,8 +13,9 @@ The ERD diagram of the models is shown below
 ## Tech/Frameworks Used
 **Backend**
 * Django v2.2, APIs were developed using Django rest framework and Class Based Views
+
 **Frontend**
-* VueJs 
+* VueJs v2 
 User Authentication was done using JWT Token Authentication
 
 ## How to Use?
