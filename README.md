@@ -35,6 +35,8 @@ This application is deployed on heroku for demo purposes. Note that you will be 
 
 [Application demo](https://generic-datamodel.herokuapp.com)
 
+> The test user *bctest* is a superuser therefore you can also visit [App Django Admin](https://generic-datamodel.herokuapp.com/admin/) and login to the django admin to view models and even create more users since the registration is not implemented yet.
+
 For deployment to heroku the following files were added
 
 * Procfile: For pointing to the django application i.e. britecore.wsgi
