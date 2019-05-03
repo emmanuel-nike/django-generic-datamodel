@@ -33,7 +33,7 @@ User Authentication was done using JWT Token Authentication
 ## Deployment
 This application is deployed on heroku for demo purposes. Note that you will be taken to a login screen and the test username/password is **bctest**/**bctest123**.
 
-[demo](https://generic-datamodel.herokuapp.com)
+[Application demo](https://generic-datamodel.herokuapp.com)
 
 For deployment to heroku the following files were added
 
