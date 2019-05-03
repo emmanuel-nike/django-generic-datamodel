@@ -25,7 +25,7 @@
           <stats-card
             title="Total Data"
             type="gradient-green"
-            sub-title="924"
+            :sub-title="dataCount"
             icon="ni ni-money-coins"
             class="mb-4 mb-xl-0"
           ></stats-card>
@@ -49,6 +49,7 @@
             :tableName="tableData.name"
             :tableColumns="tableData.columns"
             :tableId="tableData.id"
+            @dataUpdated="getDataCount"
           ></table-data-table>
         </div>
       </div>
@@ -70,6 +71,7 @@ export default {
     return {
       tableCount: 0,
       fieldCount: 0,
+      dataCount: 0,
       tableData: {
         id: 0,
         name: null,
@@ -88,9 +90,16 @@ export default {
       this.tableData.columns = value.fields;
       this.tableData.name = value.name;
       this.tableData.id = value.id;
+    },
+    getDataCount: function() {
+      this.$http
+        .get("/api/data-rows/count")
+        .then(resp => (this.dataCount = resp.data));
     }
   },
-  mounted() {}
+  mounted() {
+    this.getDataCount();
+  }
 };
 </script>
 <style></style>

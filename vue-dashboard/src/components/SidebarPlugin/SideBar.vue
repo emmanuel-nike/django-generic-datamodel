@@ -85,12 +85,15 @@
         <!--Navigation-->
         <ul class="navbar-nav mb-md-3">
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="https://github.com/emmanuel-nike/django-generic-datamodel">
               <i class="ni ni-spaceship"></i> Github
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a
+              class="nav-link"
+              href="https://github.com/emmanuel-nike/django-generic-datamodel/blob/master/README.md"
+            >
               <i class="ni ni-palette"></i> Readme
             </a>
           </li>

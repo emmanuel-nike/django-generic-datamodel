@@ -58,6 +58,19 @@ class UserView(APIView):
 # GET, POST
 # View Data rows, Create new rows with data content
 #########
+class DataRowCountView(APIView):
+    permission_classes = (IsAuthenticated,)
+
+    def get(self, request, format=None):
+        # pylint: disable=maybe-no-member
+        data_count = DataRow.objects.filter(user_id=request.user.id).count()
+        return Response(data_count)
+
+
+#########
+# GET, POST
+# View Data rows, Create new rows with data content
+#########
 class DataRowView(APIView):
     permission_classes = (IsAuthenticated,)
 

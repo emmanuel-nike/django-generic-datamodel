@@ -206,6 +206,7 @@ export default {
           dt.tableModel = {};
           dt.$notify({ type: "success", title: "Data added successfully" });
           dt.loadTableData();
+          dt.$emit("dataUpdated");
         })
         .catch(err => {
           console.log(err);
@@ -218,6 +219,7 @@ export default {
           .delete("/api/data-table/" + this.tableId + "/row/" + id)
           .then(() => {
             dt.loadTableData();
+            dt.$emit("dataUpdated");
             dt.$notify({
               type: "success",
               title: "Row data deleted successfully"

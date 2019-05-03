@@ -37,6 +37,10 @@ urlpatterns = [
     url(r'^data-table/(?P<tpk>\d+)/field/(?P<fpk>\d+)/content/(?P<cpk>\d+)/?$',
         views.DataFieldContentDetailView.as_view(), name='data-field-content-detail'),
 
+    # /api/data-row/count: Count data rows
+    url(r'^data-rows/count/?$',
+        views.DataRowCountView.as_view(), name='data-rows-count'),
+
     # /api/user: Get currently logged in user
     url(r'^user/?', views.UserView.as_view(), name='user'),
     url(r'^token-auth/?', views.CustomAuthToken.as_view(),

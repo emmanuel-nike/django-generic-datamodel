@@ -20,7 +20,9 @@
         </template>
 
         <template slot-scope="{row}">
-          <th scope="row">{{row.name}}</th>
+          <th scope="row">
+            <a href="#" @click="viewTable(row)">{{row.name}}</a>
+          </th>
           <td>{{row.fields.length}}</td>
           <td>
             <base-button
