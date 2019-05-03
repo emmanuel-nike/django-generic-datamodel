@@ -230,9 +230,10 @@ export default {
     },
     showDialog: function(message, yesFunction) {
       this.dialogMessage = message;
+      let dt = this;
       this.dialogYes = function() {
         yesFunction();
-        this.toggleDialogModal();
+        dt.toggleDialogModal();
       };
       this.toggleDialogModal();
     },

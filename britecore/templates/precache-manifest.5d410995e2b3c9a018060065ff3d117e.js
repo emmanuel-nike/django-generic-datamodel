@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "f23d6386b00eab049670",
+    "revision": "f4d137df0cacd695a8c1",
     "url": "/static/../../static/css/app.bc9d42d5.css"
   },
   {
-    "revision": "f23d6386b00eab049670",
-    "url": "/static/../../static/js/app.ee298a2c.js"
+    "revision": "f4d137df0cacd695a8c1",
+    "url": "/static/../../static/js/app.1587e83f.js"
   },
   {
     "revision": "97f89083f83b1047c0eb",
@@ -32,12 +32,8 @@ self.__precacheManifest = [
     "url": "/static/../../static/img/nucleo-icons.0b8a30b1.svg"
   },
   {
-    "revision": "61df5ddb94e008c70177754c8be1cdcd",
+    "revision": "a2b499fdee38041c5264e07f7537ac4d",
     "url": "/static/index.html"
-  },
-  {
-    "revision": "045977be2ea67b5f48bea730cb7ceda7",
-    "url": "/static/img/brand/logo.png"
   },
   {
     "revision": "a794a15f6e45b941d8a521e7965221a8",
@@ -62,6 +58,10 @@ self.__precacheManifest = [
   {
     "revision": "c532f6f0176968caa6265864ee1abb35",
     "url": "/static/img/theme/vue.jpg"
+  },
+  {
+    "revision": "045977be2ea67b5f48bea730cb7ceda7",
+    "url": "/static/img/brand/logo.png"
   },
   {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",

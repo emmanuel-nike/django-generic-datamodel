@@ -37,7 +37,7 @@
           </td>
         </template>
         <tr v-if="table_data.length == 0" slot="custom-row">
-          <td :colspan="tableColumns.length">
+          <td :colspan="tableColumns.length + 1">
             <center>Table has no data</center>
           </td>
         </tr>
@@ -65,12 +65,14 @@
               v-if="field.field_type != 3"
               class="input-group-alternative mb-3"
               :placeholder="field.name"
+              :label="field.name"
               :type="getFieldType(field.field_type)"
               v-model="tableModel[field.id]"
             ></base-input>
             <base-select
               v-else
               class="input-group-alternative mb-3"
+              :label="field.name"
               v-model="tableModel[field.id]"
               :options="getSelectOptions(field.field_options)"
             ></base-select>
@@ -100,9 +102,6 @@ export default {
       type: Array,
       description: "Table columns from fields"
     }
-  },
-  updated() {
-    this.loadTableData();
   },
   data() {
     return {
@@ -162,9 +161,10 @@ export default {
     },
     showDialog: function(message, yesFunction) {
       this.dialogMessage = message;
+      let dt = this;
       this.dialogYes = function() {
         yesFunction();
-        this.toggleDialogModal();
+        dt.toggleDialogModal();
       };
       this.toggleDialogModal();
     },
@@ -192,7 +192,6 @@ export default {
       }
     },
     saveData: function() {
-      console.log(this.tableModel, this.tableData);
       let data = [];
       for (let i in this.tableModel) {
         data.push({
@@ -230,6 +229,13 @@ export default {
   computed: {
     compTableName: function() {
       return this.tableName == null ? "No table selected" : this.tableName;
+    }
+  },
+  watch: {
+    tableId: function(newVal, oldVal) {
+      if (newVal && newVal != oldVal) {
+        this.loadTableData();
+      }
     }
   }
 };

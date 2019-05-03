@@ -32,7 +32,7 @@
         :class="[{'is-valid': valid === true}, {'is-invalid': valid === false}, inputClasses]"
         aria-describedby="addon-right addon-left"
       >
-        <option disabled value>--Select One--</option>
+        <option value>--Select One--</option>
         <option
           v-for="option in options"
           :key="option.value"
