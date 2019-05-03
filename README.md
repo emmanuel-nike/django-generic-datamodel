@@ -18,8 +18,19 @@ The ERD diagram of the models is shown below
 * VueJs v2 
 User Authentication was done using JWT Token Authentication
 
+## Deployment
+This application is deployed on heroku for demo purposes. Note that you will be taken to a login screen and the test username/password is **bctest**/**bctest123**.
+
+[demo](https://generic-datamodel.herokuapp.com)
+
+For deployment to heroku the following files were added
+
+* Procfile: For pointing to the django application i.e. britecore.wsgi
+* requirements.txt: For indicating dependencies and requirements to be installed i.e. django, djangorestframework, etc
+* runtime.txt: To state the python version this application will run on
+
 ## How to Use?
-The project uses an sqlite database and the compiled version of the VueJS application is included in this repository. To run this localy, make sure you have the requirements for Django v2.2 and have django rest framework installed. Just run the command below on your local machine
+The project uses an sqlite database and the compiled version of the VueJS application is included in this repository. To run this locally, make sure you have the requirements for Django v2.2 and have django rest framework installed. Just run the command below on your local machine
 
 > python manage.py runserver
 
@@ -28,6 +39,7 @@ and visit your http://localhost:8000 to view project. You will be taken to a log
 > npm run build
 
 this is configured to send the index.html to the template directory in britecore/template and also send javascript, css and image files to static directory
+
 
 ## Credits
 * Creative Tim [Argon Dashboard](https://www.creative-tim.com/product/argon-dashboard)
