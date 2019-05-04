@@ -1,8 +1,8 @@
 from cryptography.fernet import Fernet
 
+
 def main(key, message):
     f = Fernet(key)
-    print("called this")
     print(f.decrypt(message))
 
 
