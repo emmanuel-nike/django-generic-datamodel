@@ -5,9 +5,14 @@
         <div class="card-header bg-transparent">
           <div class="text-muted text-center mt-2 mb-3">
             <h3>Sign In</h3>
+            <small>
+              Default credentials
+              <br>bctest/bctest123
+            </small>
           </div>
         </div>
-        <div class="card-body px-lg-5 py-lg-5">
+        <div class="card-body px-lg-5 py-lg-4">
+          <base-alert v-if="errors.message" type="danger">{{ errors.message }}</base-alert>
           <form role="form" @submit.prevent="login">
             <base-input
               class="input-group-alternative mb-3"
@@ -50,6 +55,9 @@ export default {
   name: "login",
   data() {
     return {
+      errors: {
+        message: null
+      },
       model: {
         username: "",
         password: ""
@@ -64,8 +72,21 @@ export default {
         .dispatch("login", { username, password })
         .then(() => this.$router.push("/"))
         .catch(err => {
-          console.log(err);
+          if (
+            err.response.status == 400 ||
+            err.response.status == 422 ||
+            err.response.status == 401
+          )
+            this.errors.message = "Invalid login credentials";
         });
+    }
+  },
+  watch: {
+    model: {
+      handler: function(val, oldVal) {
+        this.errors.message = null;
+      },
+      deep: true
     }
   }
 };
