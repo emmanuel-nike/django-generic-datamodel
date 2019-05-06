@@ -12,7 +12,7 @@
           </div>
         </div>
         <div class="card-body px-lg-5 py-lg-4">
-          <base-alert v-if="errors.message" type="danger">{{ errors.message }}</base-alert>
+          <base-alert v-if="errors.message" type="danger" class="text-center">{{ errors.message }}</base-alert>
           <form role="form" @submit.prevent="login">
             <base-input
               class="input-group-alternative mb-3"
